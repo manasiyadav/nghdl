@@ -7,8 +7,8 @@ library ieee;
 use ieee.std_logic_1164.all; 
 use ieee.numeric_std.all;
 
-library stm8;
-use stm8.ghdl_helper.all;
+library work;
+use work.ghdl_helper.all;
 
 entity stm8s003f3 is
 port(
@@ -37,7 +37,7 @@ end stm8s003f3;
 architecture behav of stm8s003f3 is
 begin
 CopyFirmware(1);
-process(clk)
+	process(clk)
 	begin
 		if(rising_edge(CLKPA1) and VDD = '1' and VSS = '0') then
 		output(1);
@@ -47,16 +47,16 @@ process(clk)
 			NRST <= std_logic_vector(to_unsigned(var3.all, NRST'length));
 			PA2 <= std_logic_vector(to_unsigned(var4.all, PA2'length));
 			PA3 <= std_logic_vector(to_unsigned(var5.all, PA3'length));
-			PB5 <= std_logic_vector(to_unsigned(var0.all, PB5'length));
-			PB4 <= std_logic_vector(to_unsigned(var1.all, PB4'length));
-			PC3 <= std_logic_vector(to_unsigned(var2.all, PC3'length));
-			PC4 <= std_logic_vector(to_unsigned(var3.all, PC4'length));
-			PC5 <= std_logic_vector(to_unsigned(var4.all, PC5'length));
-			PC6 <= std_logic_vector(to_unsigned(var5.all, PC6'length));
-			PC7 <= std_logic_vector(to_unsigned(var2.all, PC7'length));
-			PD1 <= std_logic_vector(to_unsigned(var3.all, PD1'length));
-			PD2 <= std_logic_vector(to_unsigned(var4.all, PD2'length));
-			PD3 <= std_logic_vector(to_unsigned(var5.all, PD3'length));
+			PB5 <= std_logic_vector(to_unsigned(var6.all, PB5'length));
+			PB4 <= std_logic_vector(to_unsigned(var7.all, PB4'length));
+			PC3 <= std_logic_vector(to_unsigned(var8.all, PC3'length));
+			PC4 <= std_logic_vector(to_unsigned(var9.all, PC4'length));
+			PC5 <= std_logic_vector(to_unsigned(var10.all, PC5'length));
+			PC6 <= std_logic_vector(to_unsigned(var11.all, PC6'length));
+			PC7 <= std_logic_vector(to_unsigned(var12.all, PC7'length));
+			PD1 <= std_logic_vector(to_unsigned(var13.all, PD1'length));
+			PD2 <= std_logic_vector(to_unsigned(var14.all, PD2'length));
+			PD3 <= std_logic_vector(to_unsigned(var15.all, PD3'length));
 elsif(VDD = '0') then
 			PD4 <= "0";
 			PD5 <= "0";
@@ -75,4 +75,5 @@ elsif(VDD = '0') then
 			PD2 <= "0";
 			PD3 <= "0";
 		end if;
+	end process;
 end behav;
